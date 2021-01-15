@@ -1,0 +1,17 @@
+git config --global user.name "Edgard Kuboo"
+git config --global user.email "kuboo.dev@gmail.com"
+git config --global core.editor "code --wait"
+git config --global -e
+
+git config --global core.autocrlf input
+
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --dif $LOCAL $REMOTE"
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KubooDev/cpp-fundamental.git
+git push -u origin main
+                
