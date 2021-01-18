@@ -2,7 +2,7 @@
 #include <functional>
 
 template<typename F>
-void Loop(int n, const F& f) {
+void Loop(int n, F f) {
     for (int i = 1; i <= n; i++) {
         f(i);
     }

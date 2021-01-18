@@ -2,14 +2,14 @@
 #include <functional>
 
 int main() {
-    std::function<int (int)> Fatorial;
+    std::function<int (int)> fatorial;
 
-    Fatorial = [&Fatorial](int n) {
+    fatorial = [&fatorial](int n)->long int {
         if (n <= 1) return(1);
-        return(n * Fatorial(n-1));
+        return(n * fatorial(n-1));
     };
 
-    std::cout << "Fatorial = " << Fatorial(5) << std::endl;
+    std::cout << "Fatorial = " << fatorial(5) << std::endl;
 
     return(0);
 }
