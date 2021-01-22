@@ -1,3 +1,6 @@
+// Compilar no Linux como:
+//      g++ -std=c++11 lambda_soma_simples2.cpp -o lambda_soma_simples2
+
 #include <iostream>
 #include <functional>
 
