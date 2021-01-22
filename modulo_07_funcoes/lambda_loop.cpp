@@ -1,11 +1,18 @@
+// Compilar no linux como: 
+// g++ -std=c++11 lambda_loop.cpp -o lambda_loop
+
 #include <iostream>
-#include <functional>
 
 template<typename F>
 void Loop(int n, F f) {
     for (int i = 1; i <= n; i++) {
         f(i);
     }
+}
+
+// Sobrecarregando a função Loop para não obrigar a entrada de uma função lambda
+void Loop(int n) {
+    Loop(n, [](int valor){});
 }
 
 int main() {
