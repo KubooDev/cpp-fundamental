@@ -1,3 +1,6 @@
+// Compilar no Linux como:
+//      g++ -std=c++11 pointer_char.cpp -o pointer_char
+
 #include <iostream>
 #include <cstring>
 
@@ -5,16 +8,16 @@ int main() {
     // Exemplo 1: Ponteiro Fixo
     // Não é permitido alterar o conteúdo apontado, mas, é
     // permitido alterar o apontamento
-    char *msg1 = "Essa é uma string de ponteiro"; 
+    const char *msg1 = "Essa é uma string de ponteiro"; 
 
     std::cout << "\nExemplo 1: Ponteiro Fixo" << std::endl;
 
-    std::cout << "\tMemória : " << static_cast<void *>(msg1) << std::endl;
+    std::cout << "\tMemória : " << static_cast<const void *>(msg1) << std::endl;
     std::cout << "\tMensagem: " << msg1 << std::endl;
 
     msg1 = "Essa é outra string de ponteiro";
 
-    std::cout << "\tMemória : " << static_cast<void *>(msg1) << std::endl;
+    std::cout << "\tMemória : " << static_cast<const void *>(msg1) << std::endl;
     std::cout << "\t Mensagem: " << msg1 << std::endl;
 
     // Exemplo 2 - Alterando o conteúdo apontado
