@@ -10,6 +10,19 @@ double Soma(double *a, double *b) {
     return(*a + *b);
 }
 
+int Soma2(int a, int b) {
+    return (a + b);
+}
+
+void Loop(void *ptrFunc) {
+    int (*ptrSoma)(int, int);
+
+    ptrSoma = (int (*)(int, int)) ptrFunc;
+
+    for (int i = 0; i < 5; i++) 
+        std::cout << "\t" << (*ptrSoma)(i, i) << std::endl;
+}
+
 int main() {
     std::cout << "\nExemplo 1 - Passando o endereço das variáveis como parâmetro" << std::endl;
     double valor1 = 10;
@@ -50,6 +63,10 @@ int main() {
     valor2 = 33;
     resultado = (*ptrSoma)(&valor1, &valor2);
     std::cout << "\tSoma = " << resultado << std::endl;
-
+    
+    std::cout << "\nExemplo 4 - Ponteiro de função com parâmetro" << std::endl;
+    
+    Loop((void *) Soma2);
+    
     return 0;
 }
